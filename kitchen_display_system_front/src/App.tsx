@@ -1,4 +1,4 @@
-import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { io } from "socket.io-client";
 import { useState, useEffect } from "react";
 
@@ -63,7 +63,7 @@ function App() {
   console.log(actualUrl.includes("/dashboard"));
 
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Header isConnected={isConnected} disconnectSocket={disconnectSocket} />
       {actualUrl.includes("/takeOrder") && (
         <ContainerSendData>
@@ -79,7 +79,7 @@ function App() {
       </Routes>
 
       <Footer />
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
